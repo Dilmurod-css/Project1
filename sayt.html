@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sayt.css">
+</head>
+    <body>
+        <div class="container" id="container">
+            <div class="section" id="sec1" style="opacity: 1; transform: scale(1) rotateY(0deg);">
+              <h1>Добро пожаловать!</h1>
+              <p>Переключайтесь между секциями, используя кнопку ниже.</p>
+            </div>
+    
+            <div class="section" id="sec2" style="opacity: 0; transform: scale(0.5) rotateY(90deg);">
+                <h1>Наши Сервисы</h1>
+                <div class="services-container">
+                    <div class="service-card">
+                      <h3>Web Development</h3>
+                      <p>We build responsive and modern websites to elevate your online presence.</p>
+                    </div>
+                    <div class="service-card">
+                      <h3>Graphic Design</h3>
+                      <p>Creative designs and branding solutions for your business.</p>
+                    </div>
+                    <div class="service-card">
+                      <h3>SEO Optimization</h3>
+                      <p>Boost your website visibility with our SEO strategies.</p>
+                    </div>
+                    <div class="service-card">
+                      <h3>Digital Marketing</h3>
+                      <p>Expand your reach with our digital marketing expertise.</p>
+                    </div>
+                  </div>
+            </div>
+    
+            <div class="section" id="sec3" style="opacity: 0; transform: scale(0.5) rotateY(-90deg);">
+                <h1>Наши Продукты</h1>
+                <div class="products-container">
+                    <div class="product-card">
+                      <img src="product1.jpg" alt="Product 1" />
+                      <h3>Product One</h3>
+                      <p>A premium quality product that meets your expectations.</p>
+                    </div>
+                    <div class="product-card">
+                      <img src="product2.jpg" alt="Product 2" />
+                      <h3>Product Two</h3>
+                      <p>Experience top-notch design and functionality with our product.</p>
+                    </div>
+                    <div class="product-card">
+                      <img src="product3.jpg" alt="Product 3" />
+                      <h3>Product Three</h3>
+                      <p>Innovative and reliable. Designed for your satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section" id="sec4" style="opacity: 0; transform: scale(0.5) rotateY(90deg);">
+                <h1>Наше Портфолио</h1>
+                <p>Посмотрите наши успешные проекты:</p>
+                <ul>
+                    <li>Корпоративные сайты</li>
+                    <li>Мобильные приложения</li>
+                    <li>Рекламные кампании</li>
+                </ul>
+            </div>
+        </div>
+        <div class="buttons">
+            <button onclick="navigate(1)">Главная</button>
+            <button onclick="navigate(2)">Сервисы</button>
+            <button onclick="navigate(3)">Продукты</button>
+            <button onclick="navigate(4)">Портфолио</button>
+        </div>
+    
+        <script>
+            let current = 1;
+            function navigate(target) {
+                if (current === target) return;
+                
+                const sections = document.querySelectorAll('.section');
+                sections.forEach((sec, index) => {
+                    sec.style.opacity = "0";
+                    sec.style.transform = "scale(0.5) rotateY(" + ((index + 1) === target ? "0deg" : "90deg") + ")";
+                });
+                
+                setTimeout(() => {
+                    sections[target - 1].style.opacity = "1";
+                    sections[target - 1].style.transform = "scale(1) rotateY(0deg)";
+                }, 200);
+                
+                current = target;
+            }
+        </script>
+    </body
+</html>
+</body>
+</html>
